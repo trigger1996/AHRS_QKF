@@ -5,5 +5,10 @@
 .css
 .js
 
+*.asv
+*.html
+*.css
+*.js
+
 codegen/lib/ekf_func_quad_6dof/html/.
 codegen/mex/ekf_func_quad_6dof_mex/html/.
