@@ -1,4 +1,4 @@
-function cbn = quat2cbn(q)
+function cbn = my_quat2cbn(q)
 
     q11 = q(1)*q(1);
     q12 = q(1)*q(2);
@@ -10,7 +10,8 @@ function cbn = quat2cbn(q)
     q33 = q(3)*q(3);
     q34 = q(3)*q(4);
     q44 = q(4)*q(4);
-    
+   
+	cbn = zeros(3, 3);
     cbn(1,1) = q11 + q22 - q33 - q44;
     cbn(1,2) = 2*(q23 - q14);
     cbn(1,3) = 2*(q24 + q13);

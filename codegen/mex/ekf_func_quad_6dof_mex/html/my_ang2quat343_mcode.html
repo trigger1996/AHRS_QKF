@@ -1,0 +1,30 @@
+<!-- saved from url=(0014)about:internet -->
+<html>
+<body>
+<script src="resources/eml_report_loadable_data.js"></script>
+<pre class="code">
+<span class="srcline"><span class="lineno"><a href="82,1" id="srcline1"> 1</a></span><span class="line"><span class="keyword">function</span> <span class="var type1" id="S2T10U3">q</span> = my_ang2quat(<span class="var type1" id="S3T13U6">ang</span>)</span></span>
+<span class="srcline"><span class="lineno"><a href="82,2" id="srcline2"> 2</a></span><span class="line"></span></span>
+<span class="srcline"><span class="lineno"><a href="82,3" id="srcline3"> 3</a></span><span class="line">    <span class="comment">%%旋转矢量转换为四元数</span></span></span>
+<span class="srcline"><span class="lineno"><a href="82,4" id="srcline4"> 4</a></span><span class="line">    </span></span>
+<span class="srcline"><span class="lineno"><a href="82,5" id="srcline5"> 5</a></span><span class="line">    <span class="mxinfo " id="T4:U3">[<span class="var type1" id="S4T4U10">m</span>,<span class="var type1" id="S5T4U11">n</span>] = size(<span class="var type1" id="S3T13U14">ang</span>)</span>;</span></span>
+<span class="srcline"><span class="lineno"><a href="82,6" id="srcline6"> 6</a></span><span class="line">    </span></span>
+<span class="srcline"><span class="lineno"><a href="82,7" id="srcline7"> 7</a></span><span class="line">    <span class="keyword">if</span> <span class="mxinfo " id="T19:U7"><span class="var type1" id="S4T4U18">m</span>==<span class="mxinfo " id="T4:U9">3</span></span> </span></span>
+<span class="srcline"><span class="lineno"><a href="82,8" id="srcline8"> 8</a></span><span class="line">        <span class="mxinfo " id="T4:U10"><span class="var type1" id="S7T4U22">norm</span> = <span class="mxinfo " id="T4:U12"><span class="potentialdiff PD1">sqrt(<span class="mxinfo " id="T4:U13"><span class="mxinfo " id="T3:U14"><span class="var type1" id="S3T13U27">ang</span>'</span>*<span class="var type1" id="S3T13U28">ang</span></span>)</span></span></span>;</span></span>
+<span class="srcline"><span class="lineno"><a href="82,9" id="srcline9"> 9</a></span><span class="line">    <span class="keyword">end</span></span></span>
+<span class="srcline"><span class="lineno"><a href="82,10" id="srcline10">10</a></span><span class="line">    <span class="keyword">if</span> <span class="mxinfo " id="T19:U17"><span class="var type1" id="S5T4U32">n</span>==<span class="mxinfo " id="T4:U19">3</span></span></span></span>
+<span class="srcline"><span class="lineno"><a href="82,11" id="srcline11">11</a></span><span class="line">        <span class="var type0" id="S7T0U36">norm</span> = sqrt(<span class="var type0" id="S3T0U40">ang</span>*<span class="var type0" id="S3T0U42">ang</span>');</span></span>
+<span class="srcline"><span class="lineno"><a href="82,12" id="srcline12">12</a></span><span class="line">    <span class="keyword">end</span></span></span>
+<span class="srcline"><span class="lineno"><a href="82,13" id="srcline13">13</a></span><span class="line">    </span></span>
+<span class="srcline"><span class="lineno"><a href="82,14" id="srcline14">14</a></span><span class="line">    <span class="keyword">if</span> <span class="mxinfo " id="T19:U20"><span class="var type1" id="S7T4U46">norm</span> &gt; <span class="mxinfo " id="T4:U22">1e-40</span></span></span></span>
+<span class="srcline"><span class="lineno"><a href="82,15" id="srcline15">15</a></span><span class="line">        <span class="mxinfo " id="T4:U23"><span class="var type1" id="S9T4U50">f</span> = <span class="mxinfo " id="T4:U25"><span class="mxinfo " id="T4:U26">sin(<span class="mxinfo " id="T4:U27"><span class="var type1" id="S7T4U55">norm</span>/<span class="mxinfo " id="T4:U29">2</span></span>)</span>/<span class="var type1" id="S7T4U57">norm</span></span></span>;</span></span>
+<span class="srcline"><span class="lineno"><a href="82,16" id="srcline16">16</a></span><span class="line">    <span class="keyword">else</span> </span></span>
+<span class="srcline"><span class="lineno"><a href="82,17" id="srcline17">17</a></span><span class="line">        <span class="mxinfo " id="T4:U31"><span class="var type1" id="S9T4U61">f</span> = <span class="mxinfo " id="T4:U33"><span class="mxinfo " id="T4:U34">1</span>/<span class="mxinfo " id="T4:U35">2</span></span></span>;</span></span>
+<span class="srcline"><span class="lineno"><a href="82,18" id="srcline18">18</a></span><span class="line">    <span class="keyword">end</span></span></span>
+<span class="srcline"><span class="lineno"><a href="82,19" id="srcline19">19</a></span><span class="line">    </span></span>
+<span class="srcline"><span class="lineno"><a href="82,20" id="srcline20">20</a></span><span class="line">    <span class="mxinfo " id="T10:U36"><span class="var type1" id="S2T10U67">q</span> = <span class="mxinfo " id="T10:U38">[<span class="mxinfo " id="T4:U39">cos(<span class="mxinfo " id="T4:U40"><span class="var type1" id="S7T4U73">norm</span>/<span class="mxinfo " id="T4:U42">2</span></span>)</span>;<span class="mxinfo " id="T13:U43"><span class="var type1" id="S9T4U77">f</span>*<span class="var type1" id="S3T13U78">ang</span></span>]</span></span>;</span></span>
+<span class="srcline"><span class="lineno"><a href="82,21" id="srcline21">21</a></span><span class="line">   </span></span>
+<span class="srcline"><span class="lineno"><a href="82,22" id="srcline22">22</a></span><span class="line"><span class="keyword">end</span></span></span>
+</pre>
+</body>
+</html>
